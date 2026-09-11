@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Caio Nóbrega — NB Tech</title>
+<link rel="icon" href="/image/logo.png" type="image/png">
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
 
@@ -296,7 +297,50 @@
     font-size: 0.9rem;
   }
 
-  /* CONTATO */
+  /* PRECOS */
+  #precos{ border-top: 1px solid var(--border); }
+  .price-grid{
+    display:grid; grid-template-columns: repeat(3, 1fr); gap: 22px;
+  }
+  @media (max-width: 900px){ .price-grid{ grid-template-columns: 1fr; } }
+  .price-card{
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 30px 26px;
+    background: var(--surface);
+    display:flex; flex-direction:column;
+    transition: border-color .2s ease, transform .2s ease;
+  }
+  .price-card:hover{ border-color: var(--blue); transform: translateY(-3px); }
+  .price-card.featured{
+    border-color: var(--blue);
+    background: linear-gradient(160deg, var(--surface), rgba(61,123,245,0.07));
+    position: relative;
+  }
+  .price-card.featured::before{
+    content: 'mais escolhido';
+    position: absolute; top: -12px; right: 22px;
+    font-family: var(--mono); font-size: 0.7rem;
+    background: var(--blue); color: #06070a;
+    padding: 4px 10px; border-radius: 5px;
+  }
+  .price-card h3{ font-size: 1.05rem; color: var(--silver); font-weight: 600; }
+  .price-card .price{
+    font-family: var(--mono); color: var(--blue-soft);
+    font-size: 1.3rem; margin: 12px 0 20px;
+  }
+  .price-card ul{ list-style:none; flex:1; margin-bottom: 22px; }
+  .price-card li{
+    font-size: 0.88rem; color: var(--text-dim);
+    padding: 7px 0; border-bottom: 1px solid var(--border);
+    display:flex; align-items:center; gap:8px;
+  }
+  .price-card li:last-child{ border-bottom:none; }
+  .price-card li::before{
+    content:'</>'; font-family: var(--mono); color: var(--blue-soft);
+    font-size: 0.72rem; flex-shrink:0;
+  }
+  .price-card .btn{ align-self: flex-start; }
   #contato{ border-top: 1px solid var(--border); padding-bottom: 90px; }
   .contact-box{
     background: var(--surface);
@@ -343,11 +387,12 @@
 
 <nav>
   <div class="wrap">
-    <div class="brand"><img src="/image/Logo.png" alt="N3 Tech"> NB Tech</div>
+    <div class="brand"><img src="/image/logo.png" alt="NB Tech"> NB Tech</div>
     <ul>
       <li><a href="#sobre">Sobre</a></li>
       <li><a href="#servicos">Serviços</a></li>
       <li><a href="#projetos">Projetos</a></li>
+      <li><a href="#precos">Preços</a></li>
       <li><a href="#contato" class="nav-cta">Contato</a></li>
     </ul>
   </div>
@@ -374,7 +419,7 @@
     </div>
   </div>
   <div class="hero-logo">
-    <img src="/image/Logo.png" alt="Logo N3 Tech">
+    <img src="/image/logo.png" alt="Logo NB Tech">
   </div>
 </div>
 
@@ -442,6 +487,62 @@
         </div>
       </div>
       <div class="proj-empty">Mais projetos em breve — me manda o próximo!</div>
+    </div>
+  </div>
+</section>
+
+<section id="precos">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="section-tag">preços</div>
+      <h2>Planos</h2>
+      <p class="sub">Valores de referência — o orçamento final depende do escopo de cada projeto.</p>
+    </div>
+    <div class="price-grid">
+      <div class="price-card">
+        <h3>Site básico</h3>
+        <div class="price">R$ 500 – R$ 800</div>
+        <ul>
+          <li>Página inicial</li>
+          <li>Sobre</li>
+          <li>Serviços/produtos</li>
+          <li>Galeria</li>
+          <li>WhatsApp</li>
+          <li>Google Maps</li>
+          <li>Redes sociais</li>
+          <li>Responsivo para celular</li>
+        </ul>
+        <a href="#contato" class="btn btn-ghost">Solicitar</a>
+      </div>
+      <div class="price-card featured">
+        <h3>Site profissional</h3>
+        <div class="price">R$ 800 – R$ 1.500</div>
+        <ul>
+          <li>Design personalizado</li>
+          <li>Várias páginas</li>
+          <li>Formulário</li>
+          <li>SEO básico</li>
+          <li>Integração com WhatsApp</li>
+          <li>Google Maps</li>
+          <li>Domínio</li>
+          <li>Hospedagem/configuração</li>
+        </ul>
+        <a href="#contato" class="btn btn-primary">Solicitar</a>
+      </div>
+      <div class="price-card">
+        <h3>Site mais completo</h3>
+        <div class="price">R$ 1.500 – R$ 3.000+</div>
+        <ul>
+          <li>Sistema de reservas</li>
+          <li>Catálogo</li>
+          <li>Painel administrativo</li>
+          <li>Pedidos</li>
+          <li>Área do cliente</li>
+          <li>Banco de dados</li>
+          <li>Integrações</li>
+        </ul>
+        <a href="#contato" class="btn btn-ghost">Solicitar</a>
+      </div>
     </div>
   </div>
 </section>
